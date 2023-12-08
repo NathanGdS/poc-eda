@@ -1,0 +1,29 @@
+POST http://localhost:3000/invoice HTTP/1.1
+content-type: application/json
+
+{
+    "description": "sample",
+    "value": 100
+}
+
+###
+GET http://localhost:3000/invoice/events HTTP/1.1
+
+###
+GET http://localhost:3000/invoice HTTP/1.1
+
+###
+POST http://localhost:3000/invoice/value/9d03d1e4-c2a9-4c18-a139-508ae55899a0 HTTP/1.1
+content-type: application/json
+
+{
+    "value": 50
+}
+
+###
+POST http://localhost:3000/invoice/reprocess/9d03d1e4-c2a9-4c18-a139-508ae55899a0 HTTP/1.1
+content-type: application/json
+
+{
+    "since": 1
+}
